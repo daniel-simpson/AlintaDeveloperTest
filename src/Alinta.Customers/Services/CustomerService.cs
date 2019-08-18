@@ -1,34 +1,69 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Alinta.Customers.Data;
 using Alinta.Customers.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Alinta.Customers.Services
 {
     public class CustomerService : ICustomerService
     {
-        public Task AddCustomer(Customer customer)
+        private readonly CustomerDataContext _context;
+
+        public CustomerService(CustomerDataContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task DeleteCustomer(int customerId)
+        public async Task AddCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(customer);
+            await _context.SaveChangesAsync();
         }
 
-        public Task EditCustomer(Customer customer)
+        public async Task<Customer> GetCustomer(Guid customerId)
         {
-            throw new NotImplementedException();
+            return await _context.Customers
+                .FirstOrDefaultAsync(x => x.Id == customerId);
         }
 
-        public Task<Customer> GetCustomer(int customerId)
+        public async Task EditCustomer(Customer newCustomer)
         {
-            throw new NotImplementedException();
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(x => x.Id == newCustomer.Id);
+            
+            if (customer == default(Customer))
+            {
+                return;
+            }
+
+            _context.Attach(customer);
+
+            customer.FirstName = newCustomer.FirstName;
+            customer.LastName = newCustomer.LastName;
+            customer.DateOfBirth = newCustomer.DateOfBirth;
+
+            await _context.SaveChangesAsync();
         }
 
-        public Task<Customer> Search(string searchTerm)
+        public async Task DeleteCustomer(Guid customerId)
         {
-            throw new NotImplementedException();
+            var customer = await GetCustomer(customerId);
+            if (customer == default(Customer))
+            {
+                // Maybe do some logging if this wasn't a coding test?
+                return;
+            }
+
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Customer> Search(string searchTerm)
+        {
+            return await _context.Customers.SingleOrDefaultAsync(c =>
+                c.FirstName.Contains(searchTerm) || c.LastName.Contains(searchTerm)
+            );
         }
     }
 }
