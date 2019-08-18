@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alinta.Customers.Tests", "src\Alinta.Customers.Tests\Alinta.Customers.Tests.csproj", "{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alinta.Customers", "src\Alinta.Customers\Alinta.Customers.csproj", "{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{1995FDBF-7E38-493F-96D3-2F6F1158CCBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alinta.Host", "src\Alinta.Host\Alinta.Host.csproj", "{822ADEFA-EF7E-46BA-BEC4-6B350EBC9826}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822ADEFA-EF7E-46BA-BEC4-6B350EBC9826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822ADEFA-EF7E-46BA-BEC4-6B350EBC9826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822ADEFA-EF7E-46BA-BEC4-6B350EBC9826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822ADEFA-EF7E-46BA-BEC4-6B350EBC9826}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6C73CDC-9D5C-4CA1-9D38-890DA25B8779} = {1995FDBF-7E38-493F-96D3-2F6F1158CCBC}
+		{8D295CB8-7E14-4C92-AC5B-941A7DC9EA3F} = {1995FDBF-7E38-493F-96D3-2F6F1158CCBC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D96504AA-4599-465A-9294-10151D998235}
+	EndGlobalSection
+EndGlobal
